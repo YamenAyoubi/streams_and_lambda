@@ -1,9 +1,8 @@
 package se.lexicon.streams_and_lambda;
 
-
-import java.security.KeyStore.Entry;
 import java.util.*;
-
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 import se.lexicon.streams_and_lambda.utility.Gender;
@@ -87,14 +86,16 @@ public class Lab {
 //	/**
 //	 * Exercise 5 Create a new thread that prints the numbers from the local list
 //	 */
-//	public void exercise5() {
-//		System.out.println("\nRunning exercise 5:\n");
-//		List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-//
-//		/* Your code here */
-//		System.out.println(list);
-//
-//	}
+	public void exercise5() {
+		System.out.println("\nRunning exercise 5:\n");
+		List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+		/* Your code here */
+		ExecutorService service = Executors.newSingleThreadExecutor();
+		service.execute (() -> list.forEach(System.out::println));
+
+
+	}
 
 	/**
 	 * Exercise 6 By using stream create a new list with all the strings from the

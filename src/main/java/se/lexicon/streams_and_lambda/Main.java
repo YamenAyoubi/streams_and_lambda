@@ -31,6 +31,7 @@ public class Main {
 		theLab.exercise2();
 		theLab.exercise3();
 		theLab.exercise4();
+		theLab.exercise5();
 		theLab.exercise6();
 		theLab.exercise7();
 		theLab.exercise8();
