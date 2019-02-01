@@ -107,9 +107,9 @@ public class Lab {
 
 		/* Your code here */
 		list.replaceAll(s1->s1.toLowerCase());
-		String Perfect= list.stream()
+		String lowercaseList= list.stream()
 		.reduce("", (s1,s2) -> s1+ " "+ s2);
-		System.out.println(Perfect);
+		System.out.println(lowercaseList);
 
 	}
 
@@ -170,14 +170,14 @@ public class Lab {
 		System.out.println("\nRunning exercise 10:\n");
 
 		/* Your code here */
-		List <Person> FamilyNameAli = persons.stream()   
+		List <Person> FamilyNameOfAli = persons.stream()   
         .filter(p-> p.getLastName().contains("Ali"))
         .collect(Collectors.toList()); 
-		System.out.println(FamilyNameAli);
+		System.out.println(FamilyNameOfAli);
 
-		FamilyNameAli.stream()
+		FamilyNameOfAli.stream()
 		.forEach(p -> p.setFirstName("Muhammad"));
-		System.out.println(FamilyNameAli);
+		System.out.println(FamilyNameOfAli);
 		
 
 		
@@ -198,7 +198,7 @@ public class Lab {
 		long NumberOfFemales=persons.stream()
 		.filter(p-> p.getGender().equals(Gender.FEMALE))
 		.count(); 
-		System.out.println(NumberOfFemales);
+		System.out.println(NumberOfFemales+" Females Contains This List");
 		
 		
 	}
