@@ -46,7 +46,8 @@ public class Lab {
 
 		/* Your code here */
 
-        list.stream().filter(s->s.length()%2 !=0).forEach(System.out :: println);
+        list.removeIf(s1->s1.length()%2 !=0);
+        list.forEach(System.out :: println);
 		
 		
 	}
@@ -60,7 +61,7 @@ public class Lab {
 		List<String> list = new ArrayList<>(Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
 
 		/* Your code here */
-		list.replaceAll((s1)->s1.toUpperCase());System.out.println(list);
+		list.replaceAll(s->s.toUpperCase());System.out.println(list);
 	}
 
 	/**
