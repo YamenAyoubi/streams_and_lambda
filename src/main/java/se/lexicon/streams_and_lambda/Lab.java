@@ -112,6 +112,7 @@ public class Lab {
 		.reduce("", (s1,s2) -> s1+ " "+ s2);
 		System.out.println(lowercaseList);
 
+
 	}
 
 	/**
@@ -127,6 +128,7 @@ public class Lab {
 		Set<String> NewList=
 			 list.stream()	
 			.filter((s1)->s1.length()%2 !=0)
+			.map(String::toLowerCase)
 			.collect(Collectors.toSet());
 			System.out.println(NewList);
 	}
@@ -141,8 +143,8 @@ public class Lab {
 		/* Your code here */
 		persons.stream()
 				.filter(p-> p.getLastName().contains("A"))
-				.peek(System.out::println) 
-				.collect(Collectors.toList());
+				.forEach(System.out::println);
+
 		
 		
 	}
@@ -172,13 +174,13 @@ public class Lab {
 
 		/* Your code here */
 		List <Person> FamilyNameOfAli = persons.stream()   
-        .filter(p-> p.getLastName().contains("Ali"))
+        .filter(p-> p.getLastName().equals("Ali"))
         .collect(Collectors.toList()); 
-		System.out.println(FamilyNameOfAli);
+		FamilyNameOfAli.forEach(System.out :: println);
 
 		FamilyNameOfAli.stream()
 		.forEach(p -> p.setFirstName("Muhammad"));
-		System.out.println(FamilyNameOfAli);
+		FamilyNameOfAli.forEach(System.out :: println);
 		
 
 		
