@@ -107,12 +107,12 @@ public class Lab {
 		List<String> list = Arrays.asList("The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG");
 
 		/* Your code here */
-		list.replaceAll(s1->s1.toLowerCase());
-		String lowercaseList= list.stream()
-		.reduce("", (s1,s2) -> s1+ " "+ s2);
-		System.out.println(lowercaseList);
 
-
+		list.forEach(s -> System.out.print(s + " "));
+		List<String> newList = list.stream()
+				.map(String::toLowerCase)
+				.collect(Collectors.toList());
+		newList.forEach(s -> System.out.print(s + " "));
 	}
 
 	/**
@@ -141,12 +141,11 @@ public class Lab {
 		System.out.println("\nRunning exercise 8:\n");
 
 		/* Your code here */
+		
 		persons.stream()
-				.filter(p-> p.getLastName().contains("A"))
-				.forEach(System.out::println);
-
-		
-		
+			.filter(p -> p.getLastName()
+			.startsWith("A"))
+			.forEach(System.out::println);
 	}
 
 	/**
